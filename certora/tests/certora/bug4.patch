@@ -1,0 +1,19 @@
+diff --git a/certora/munged/syndicate/Syndicate.sol b/certora/munged/syndicate/Syndicate.sol
+index 07f69c8..1438164 100644
+--- a/certora/munged/syndicate/Syndicate.sol
++++ b/certora/munged/syndicate/Syndicate.sol
+@@ -463,11 +462,9 @@ contract Syndicate is ISyndicateInit, Initializable, Ownable, ReentrancyGuard, S
+                     blsKey.unwrap(_blsPubKey)
+                 );
+ 
+-                if (currentSlashedAmount < 4 ether) {
+-                    currentAccrued +=
+-                    numberOfCollateralisedSlotOwnersForKnot > 1 ? balance * unprocessedForKnot / (4 ether - currentSlashedAmount)
+-                    : unprocessedForKnot;
+-                }
++                currentAccrued +=
++                numberOfCollateralisedSlotOwnersForKnot > 1 ? balance * unprocessedForKnot / (4 ether - currentSlashedAmount)
++                : unprocessedForKnot;
+                 break;
+             }
+         }
