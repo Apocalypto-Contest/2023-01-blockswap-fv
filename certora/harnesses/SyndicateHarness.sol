@@ -132,5 +132,29 @@ contract SyndicateHarness is Syndicate {
     function getStakeHouseUniverse() internal view override returns (IStakeHouseUniverse stakeHouseUniverse) {
         return IStakeHouseUniverse(universe);
     }
+
+   // --- some additions 
+   // get balance
+   function balance(address addr) external view returns (uint256) {
+       return addr.balance;
+   }
+
+   // initialize
+   function initialize(
+       address _contractOwner,
+       uint256 _priorityStakingEndBlock,
+       address _priorityStaker1, address _priorityStaker2,
+       blsKey _blsPubKey1, blsKey _blsPubKey2
+   ) public {
+       address[] memory _priorityStakers = new address[](2);
+       _priorityStakers[0] = _priorityStaker1;
+       _priorityStakers[1] = _priorityStaker2;
+
+       blsKey[] memory _blsPubKeys = new blsKey[](2);
+       _blsPubKeys[0] = _blsPubKey1;
+       _blsPubKeys[1] = _blsPubKey2;
+
+       _initialize(_contractOwner, _priorityStakingEndBlock, _priorityStakers, _blsPubKeys);
+   }
 }
 
