@@ -119,7 +119,6 @@ rule totalEthReceivedMonotonicallyIncreases(method f) filtered {
     assert totalEthReceivedAfter >= totalEthReceivedBefore, "total ether received must not decrease";
 }
 
-<<<<<<< HEAD
 /*
 Address 0 must have zero sETH balance.
 */
