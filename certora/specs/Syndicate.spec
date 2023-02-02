@@ -43,7 +43,7 @@ methods {
     // ERC20
     name()                                returns (string)  => DISPATCHER(true)
     symbol()                              returns (string)  => DISPATCHER(true)
-    decimals()                            returns (string)  => DISPATCHER(true)
+    decimals()                            returns (string) envfree => DISPATCHER(true)
     totalSupply()                         returns (uint256) => DISPATCHER(true)
     balanceOf(address)                    returns (uint256) => DISPATCHER(true)
     allowance(address,address)            returns (uint)    => DISPATCHER(true)
@@ -119,6 +119,7 @@ rule totalEthReceivedMonotonicallyIncreases(method f) filtered {
     assert totalEthReceivedAfter >= totalEthReceivedBefore, "total ether received must not decrease";
 }
 
+<<<<<<< HEAD
 /*
 Address 0 must have zero sETH balance.
 */
