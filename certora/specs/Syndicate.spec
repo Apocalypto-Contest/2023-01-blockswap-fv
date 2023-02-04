@@ -1,4 +1,4 @@
-using MocksETH2 as sETHToken
+using MocksETH as sETHToken
 
 methods {
     //// ETH balance
