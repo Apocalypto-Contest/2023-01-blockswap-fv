@@ -6,7 +6,7 @@ import { ERC20PermitUpgradeable } from "@openzeppelin/contracts-upgradeable/toke
 import { ISlotSettlementRegistry } from "../munged/interfaces/ISlotSettlementRegistry.sol";
 import { ScaledMath } from "../munged/libraries/ScaledMath.sol";
 
-contract  MocksETH2 is ERC20PermitUpgradeable {
+contract  MocksETH is ERC20PermitUpgradeable {
     using ScaledMath for uint256;
 
     /// @notice Address of registry of all SLOT tokens
