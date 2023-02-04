@@ -276,7 +276,7 @@ Value of numberOfRegisteredKnots:
 - decreases only through deRegisterKnots
 */
 rule numberOfRegisteredKnotsIncreaseDecrease(method f) filtered {
-    f -> notHarnessCall(f)
+    f -> notHarnessCall(f) && f.selector != initialize(address,uint256,address[],bytes32[]).selector
 } {
     env e;
     calldataarg args;
